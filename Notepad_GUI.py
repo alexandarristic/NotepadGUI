@@ -11,13 +11,13 @@ scroll = Scrollbar(root)
 menubar = Menu(root)
 filemenu= Menu(menubar,tearoff=0)
 
-def op():
+def openFile():
     name = askopenfilename(title="Select a file")
     with open(name) as inFile:
         for line in inFile:
             write.insert(END,line + "\n")
 
-def save():
+def saveFile():
     savename = asksaveasfile(mode='w')
     if savename != None:
         data = write.get('1.0',END)
@@ -25,8 +25,8 @@ def save():
         savename.close()
 
 
-filemenu.add_command(label='Open',command=op)
-filemenu.add_command(label='Save',command=save)
+filemenu.add_command(label='Open',command=openFile)
+filemenu.add_command(label='Save',command=saveFile)
 filemenu.add_command(label='Exit',command=root.destroy)
 menubar.add_cascade(label='File',menu=filemenu)
 

@@ -5,7 +5,7 @@ from Tkinter import *
 from tkFileDialog import *
 
 root = Tk()
-root.title("File reader")
+root.title("File editor")
 write = Text(root,height=20,width=40,wrap=WORD)
 scroll = Scrollbar(root)
 menubar = Menu(root)
